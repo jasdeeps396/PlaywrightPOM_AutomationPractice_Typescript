@@ -26,7 +26,7 @@ export class LoginPage {
     async verifyIncorrectCredentialsMessage(): Promise <void>
     {
 
-        await expect(this.incorrectMessage).toBeVisible()
+        // assertion
         await expect(this.incorrectMessage).toBeVisible()
         await expect(this.incorrectMessage).toBeVisible()
     }
