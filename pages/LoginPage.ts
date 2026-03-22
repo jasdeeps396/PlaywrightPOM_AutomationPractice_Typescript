@@ -27,6 +27,8 @@ export class LoginPage {
     {
 
         await expect(this.incorrectMessage).toBeVisible()
+        await expect(this.incorrectMessage).toBeVisible()
+        await expect(this.incorrectMessage).toBeVisible()
     }
 
 
