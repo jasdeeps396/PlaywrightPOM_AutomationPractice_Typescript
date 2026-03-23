@@ -16,16 +16,17 @@ export class LoginPage {
         await this.page.goto("/client")
     }
 
-    async validLogin(username: string, password: string) :Promise <void> {
+    async loginFunction(username: string, password: string) :Promise <void> {
         await this.username.fill(username)
         await this.password.fill(password)
         await this.LoginBtn.click()
-    }
 
+    }
+ // invalid message
     async verifyIncorrectCredentialsMessage(): Promise <void>
     {
         await expect(this.incorrectMessage).toBeVisible()
-        //asert hai
+        
     }
 
 

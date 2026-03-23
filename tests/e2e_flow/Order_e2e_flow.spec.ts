@@ -18,8 +18,8 @@ test('@webtest verify that user is able to place order successfully', async ({ p
     const app = new App(page);
 
     await app.loginPage.goto();
-    await app.loginPage.validLogin(userName, password);
 
+    await app.loginPage.loginFunction(userName, password);
     await app.dashboardPage.verifyDashboardLoadedSuccessfully();
     await app.dashboardPage.clickOnAddToCartOfSpecificProduct(productName);
     await app.dashboardPage.verifyProductAddToCartMessage();
