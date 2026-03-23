@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices, webkit } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -52,10 +52,10 @@ export default defineConfig({
   /* Configure projects for major browsers */
    projects: [
     {
-      name: 'chrome',
+      name: 'chromium',
       use: {
-        // ...devices['Desktop Chrome'],
-        viewport:null,
+        ...devices['Desktop Chrome'],
+      
         launchOptions: {
           args: ['--start-maximized']
         },
@@ -66,23 +66,20 @@ export default defineConfig({
     {
       name: 'firefox',
       use: { 
-        // ...devices['Desktop Firefox'] 
+        ...devices['Desktop Firefox'] ,
+      
         
-         viewport:null,
-        launchOptions: {
-          args: ['--start-maximized']
-        },
+         viewport:{width:1280,height:720},
+        
       },
     },
 
     {
       name: 'webkit',
       use: { 
-        // ...devices['Desktop Safari']
-         viewport:null,
-        launchOptions: {
-          args: ['--start-maximized']
-        },
+        ...devices['Desktop Safari'],
+       
+         viewport:{width:1280,height:720},
        },
     },
 

@@ -16,7 +16,7 @@ test('verify that user is login', async ({ page ,browserName }) => {
     await app.loginPage.loginFunction(users.validUser1.username, users.validUser1.password)
     await app.dashboardPage.verifyDashboardLoadedSuccessfully()
 })
-test('verify that user should not login with invalid creds', async ({ page ,browserName }) => {
+test('verify that user should not login with invalid creds @invalidLogin', async ({ page ,browserName }) => {
     
     const app = new App(page)
     console.log("-------------------------------------------------------------")
