@@ -32,7 +32,7 @@ export default defineConfig({
   
   reporter: [
   ['html', { outputFolder: 'playwright-report', open: 'never' }],
-  ['allure-playwright'],
+  ['allure-playwright',{outputFolder:'allure-report'}],
   ['list']
   ]
   ,
@@ -63,15 +63,28 @@ export default defineConfig({
 
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'firefox',
+      use: { 
+        // ...devices['Desktop Firefox'] 
+        
+         viewport:null,
+        launchOptions: {
+          args: ['--start-maximized']
+        },
+      },
+    },
 
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    {
+      name: 'webkit',
+      use: { 
+        // ...devices['Desktop Safari']
+         viewport:null,
+        launchOptions: {
+          args: ['--start-maximized']
+        },
+       },
+    },
 
     /* Test against mobile viewports. */
     // {
