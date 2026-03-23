@@ -6,16 +6,22 @@ import { users } from '../../test-data/users';
 
 
 
-test('verify that user is login', async ({ page }) => {
+test('verify that user is login', async ({ page ,browserName }) => {
   
     const app = new App(page)
+    console.log("-------------------------------------------------------------")
+    console.log("Launching ",browserName, " browser")
+    console.log("-------------------------------------------------------------")
     await app.loginPage.goto()
     await app.loginPage.loginFunction(users.validUser1.username, users.validUser1.password)
     await app.dashboardPage.verifyDashboardLoadedSuccessfully()
 })
-test('verify that user should not login with invalid creds', async ({ page }) => {
+test('verify that user should not login with invalid creds', async ({ page ,browserName }) => {
     
     const app = new App(page)
+    console.log("-------------------------------------------------------------")
+    console.log("Launching ",browserName, " browser")
+    console.log("-------------------------------------------------------------")
     await app.loginPage.goto()
     await app.loginPage.loginFunction(users.invalidUser1.username, users.invalidUser1.password)
     await app.loginPage.verifyIncorrectCredentialsMessage()

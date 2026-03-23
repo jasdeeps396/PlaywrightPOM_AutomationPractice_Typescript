@@ -13,9 +13,12 @@ console.log(userName,"------",password,"---------",productName,"--------",produc
 // test.describe.configure({mode:'serial'})
 // {
 
-test('@webtest verify that user is able to place order successfully', async ({ page }) => {
+test('@webtest verify that user is able to place order successfully', async ({ page , browserName}) => {
 
     const app = new App(page);
+    console.log("-------------------------------------------------------------")
+    console.log("Launching ",browserName, " browser")
+    console.log("-------------------------------------------------------------")
 
     await app.loginPage.goto();
 
