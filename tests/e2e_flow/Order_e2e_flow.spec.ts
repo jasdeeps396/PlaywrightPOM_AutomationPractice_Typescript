@@ -13,7 +13,7 @@ console.log(userName,"------",password,"---------",productName,"--------",produc
 // test.describe.configure({mode:'serial'})
 // {
 
-test('@webtest verify that user is able to place order successfully', async ({ page , browserName}) => {
+test('verify that user is able to place order successfully', async ({ page , browserName}) => {
 
     const app = new App(page);
     console.log("-------------------------------------------------------------")
